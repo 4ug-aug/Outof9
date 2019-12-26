@@ -17,9 +17,9 @@ def main():
         for i in range(9):
             let9.append(random.choice(letters))
 
-    def chose_letters():
+    def choose_letters():
         for i in range(9):
-            input_letter = input('Which letters should be used: ')
+            input_letter = input('Which letters should be used: ') # raw_input for terminal use
             let9.append(input_letter)
         let9.sort()
 
@@ -30,10 +30,10 @@ def main():
         try:
             length_of_word = int(input('How long should the word be exacly: '))
             choice = input('Random letters(1) or chose your own?(2): ')
-            if choice == '2':
-                chose_letters()
-            elif choice == '1':
-                randomize
+            if choice == 2:
+                choose_letters()
+            elif choice == 1:
+                randomize()
         except ValueError:
             print('Invalid Input')
             UI()
@@ -76,6 +76,6 @@ def main():
 
     start_time = time.time()
     checklet(lengthWords)
+    print('Done searching...')
+    print("Time elapsed: %ss" % (time.time() - start_time))
 main()
-print('Done searching...')
-print("Time elapsed: %ss" % (time.time() - start_time))
